@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>456312559410-tikd9ccc1iu3li7lns1km7c2od39mr4d.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.456312559410-tikd9ccc1iu3li7lns1km7c2od39mr4d</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBPFuou04IBdswQHzkJY8JYM7twaH7pnG0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>456312559410</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.mel</string>
+	<key>PROJECT_ID</key>
+	<string>mel-pet-117ca</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mel-pet-117ca.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:456312559410:ios:20b702dd15c0807722692b</string>
+	<key>DATABASE_URL</key>
+	<string>https://mel-pet-117ca.firebaseio.com</string>
+</dict>
+</plist>
