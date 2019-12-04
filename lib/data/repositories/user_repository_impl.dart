@@ -4,9 +4,8 @@ import 'package:mel/datasources.dart'
     show UserLocalDataSource, UserRemoteDataSource;
 import 'package:mel/entities.dart' show UserEntity;
 import 'package:mel/models.dart' show UserModel;
-import 'package:mel/providers.dart' show UserAuthProviderImpl;
 import 'package:mel/repositories.dart' show UserRepository;
-import 'package:meta/meta.dart';
+import 'package:meta/meta.dart' show required;
 
 import 'package:mel/core.dart'
     show
@@ -26,25 +25,30 @@ class UserRepositoryImpl implements UserRepository {
   final NetworkInfo networkInfo;
   final UserRemoteDataSource remoteDataSource;
   final UserLocalDataSource localDataSource;
-  final UserAuthProviderImpl userAuthProvider;
+  final FirebaseAuth firebaseAuth;
 
-  UserRepositoryImpl({
-    @required this.remoteDataSource,
-    @required this.localDataSource,
-    @required this.networkInfo,
-    @required this.userAuthProvider,
-  })  : assert(remoteDataSource != null),
+  UserRepositoryImpl(
+      {@required this.remoteDataSource,
+      @required this.localDataSource,
+      @required this.networkInfo,
+      @required this.firebaseAuth})
+      : assert(remoteDataSource != null),
         assert(localDataSource != null),
         assert(networkInfo != null),
-        assert(userAuthProvider != null);
+        assert(firebaseAuth != null);
 
   @override
   Future<Either<Failure, UserEntity>> authenticate(
       String email, String password) async {
+    if (!await networkInfo.isConnected) return Left(NetworkFailure());
+
     try {
-      final FirebaseUser user =
-          await userAuthProvider.signInWithEmailAndPassword(email, password);
+      final AuthResult authResult = await firebaseAuth
+          .signInWithEmailAndPassword(email: email, password: password);
+      if (authResult == null) return Left(AuthorizationFailure());
+      final user = authResult.user;
       final result = await remoteDataSource.getUserData(user.uid);
+      await localDataSource.cacheUserData(result);
       return Right(result);
     } on ServerException {
       return Left(ServerFailure());
@@ -57,7 +61,7 @@ class UserRepositoryImpl implements UserRepository {
 
   @override
   Future<Either<Failure, UserEntity>> currentUser() async {
-    final FirebaseUser firebaseUser = await userAuthProvider.currentUser();
+    final FirebaseUser firebaseUser = await firebaseAuth.currentUser();
     if (firebaseUser != null) {
       if (await networkInfo.isConnected) {
         try {
@@ -85,7 +89,7 @@ class UserRepositoryImpl implements UserRepository {
   Future<Either<Failure, None>> signOut() async {
     try {
       await localDataSource.cleanUserData();
-      userAuthProvider.signOut();
+      firebaseAuth.signOut();
       return null;
     } on ServerException {
       return Left(ServerFailure());
@@ -103,10 +107,10 @@ class UserRepositoryImpl implements UserRepository {
     final isConnected = await networkInfo.isConnected;
     if (isConnected == true) {
       try {
-        FirebaseUser firebaseUser = await userAuthProvider
-            .createUserWithEmailAndPassword(email, password);
+        AuthResult authResult = await firebaseAuth
+            .createUserWithEmailAndPassword(email: email, password: password);
         final user = new UserModel(
-            userId: firebaseUser.uid,
+            userId: authResult.user.uid,
             email: email,
             firstName: firstName,
             lastName: lastName,
@@ -114,7 +118,8 @@ class UserRepositoryImpl implements UserRepository {
             avatar: avatar);
         await remoteDataSource.createUser(user);
         await localDataSource.cacheUserData(user);
-        await userAuthProvider.signInWithEmailAndPassword(email, password);
+        await firebaseAuth.signInWithEmailAndPassword(
+            email: email, password: password);
         final result = await remoteDataSource.getUserData(user.userId);
         return Right(result);
       } on ServerException {

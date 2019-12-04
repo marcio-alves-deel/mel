@@ -356,6 +356,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "provider",
+      "rootUri": "file:///Users/marciomontenegro/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/provider-3.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "pub_semver",
       "rootUri": "file:///Users/marciomontenegro/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/pub_semver-1.4.2",
       "packageUri": "lib/",
@@ -488,7 +494,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2019-12-01T22:36:17.735487Z",
+  "generated": "2019-12-04T03:14:48.695945Z",
   "generator": "pub",
   "generatorVersion": "2.7.0"
 }
