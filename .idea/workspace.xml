@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoTestManager">
+    <enabled-run-configurations>
+      <run-configuration type="DartTestRunConfigurationType" name="tests in mel" />
+    </enabled-run-configurations>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f518cb45-87d2-4ace-ac55-b8789c5ebbc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/testfile.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/testfile.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/network/network_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/network/network_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/usecases/usecases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/usecases/usecases.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/datasources/users_local_data_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/datasources/users_local_data_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/models/user_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/repositories/user_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/repositories/user_repository_impl.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/providers/user_auth_provider_impl.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/providers.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/datasources.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/datasources.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/entities/user_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/entities/user_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/repositories/user_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repositories/user_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/sign_in.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/sign_out.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/usecases/sign_out.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/sign_up.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/usecases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/usecases.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data/repositories/repository_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/repositories/repository_test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/domain/usecases/sign_in_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/domain/usecases/sign_out_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/domain/usecases/sign_out_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/domain/usecases/sign_up_test.dart" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,21 +44,67 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/domain/usecases/authenticate_test.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/domain/usecases/register_test.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-28">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1235">
+              <caret line="200" column="36" selection-start-line="200" selection-start-column="36" selection-end-line="200" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart" />
+      </list>
+    </option>
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
         <option value="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" />
         <option value="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/runConfigurations/tests_in_test.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -42,13 +113,61 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="usecases" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="fixtures" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -64,11 +183,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="tests in test" type="FlutterTestConfigType" factoryName="Flutter Test" nameIsGenerated="true">
-      <option name="testDir" value="$PROJECT_DIR$/test" />
+  <component name="RunManager" selected="Flutter Test.tests in test">
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <option name="filePath" value="$PROJECT_DIR$/test" />
+      <option name="scope" value="FOLDER" />
+      <option name="testRunnerOptions" value="--watch --no-machine" />
       <method v="2" />
     </configuration>
+    <configuration name="tests in mel" type="DartTestRunConfigurationType" factoryName="Dart Test" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$" />
+      <option name="scope" value="FOLDER" />
+      <option name="testRunnerOptions" value="--watch --no-machine" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Dart Test.tests in mel" />
+      <item itemvalue="Flutter Test.tests in test" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -84,33 +215,99 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="tests_in_test - 2019.12.03 at 13h 38m 25s.xml">
+    <history-entry file="tests_in_test - 2019.12.10 at 19h 45m 40s.xml">
+      <configuration name="tests in test" configurationId="FlutterTestConfigType" />
+    </history-entry>
+    <history-entry file="tests_in_test - 2019.12.14 at 12h 02m 08s.xml">
+      <configuration name="tests in test" configurationId="FlutterTestConfigType" />
+    </history-entry>
+    <history-entry file="Run_all_Tests - 2019.12.14 at 12h 03m 05s.xml">
+      <configuration name="Run all Tests" configurationId="DartTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_all_Tests - 2019.12.14 at 12h 03m 19s.xml">
+      <configuration name="Run all Tests" configurationId="DartTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_all_Tests - 2019.12.14 at 12h 03m 21s.xml">
+      <configuration name="Run all Tests" configurationId="DartTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="tests_in_test - 2019.12.14 at 12h 11m 14s.xml">
+      <configuration name="tests in test" configurationId="FlutterTestConfigType" />
+    </history-entry>
+    <history-entry file="tests_in_mel_test - 2019.12.14 at 12h 16m 04s.xml">
+      <configuration name="tests in mel/test" configurationId="DartTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="tests_in_mel - 2019.12.14 at 12h 17m 40s.xml">
+      <configuration name="tests in mel" configurationId="DartTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="tests_in_mel - 2019.12.14 at 12h 19m 00s.xml">
+      <configuration name="tests in mel" configurationId="DartTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="tests_in_test - 2019.12.14 at 12h 19m 13s.xml">
       <configuration name="tests in test" configurationId="FlutterTestConfigType" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" visible="true" weight="0.3297568" />
-      <window_info id="Structure" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="Resources Explorer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Captures" order="0" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="Run" weight="0.32891566" />
-      <window_info anchor="bottom" id="Debug" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Flutter Inspector" />
-      <window_info anchor="right" id="Flutter Outline" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Build Variants" sideWeight="0.50230414" side_tool="true" weight="0.24821173" />
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49769586" visible="true" weight="0.24821173" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Resources Explorer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Logcat" weight="0.32891566" />
+      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.30722892" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32891566" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.32891566" />
+      <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.32891566" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="right" id="Assistant" weight="0.33476394" />
+      <window_info anchor="right" id="Coverage" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Flutter Inspector" order="2" weight="0.3297568" />
+      <window_info anchor="right" id="Flutter Outline" order="3" weight="0.3297568" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
     </layout>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mel$register_test_dart.json" NAME="register_test.dart Coverage Results" MODIFIED="1576336191596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="DartCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" CONTEXT_FILE_PATH="$PROJECT_DIR$/test/domain/usecases/register_test.dart" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/domain/usecases/authenticate_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/domain/usecases/register_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1235">
+          <caret line="200" column="36" selection-start-line="200" selection-start-column="36" selection-end-line="200" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

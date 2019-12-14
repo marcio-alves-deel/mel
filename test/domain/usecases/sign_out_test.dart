@@ -12,7 +12,7 @@ void main() {
 
   setUp(() {
     mockUserRepository = MockUserRepository();
-    usecase = SignOut(mockUserRepository);
+    usecase = SignOut(repository: mockUserRepository);
   });
 
   test('should sign out user', () async {

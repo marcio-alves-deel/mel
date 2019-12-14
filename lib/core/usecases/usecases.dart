@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' show Either;
 import 'package:mel/core.dart' show Failure;
 
 abstract class UseCases<Type> {

@@ -1,5 +1,6 @@
-import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:dartz/dartz.dart' show Either, Left, Right, None;
+import 'package:firebase_auth/firebase_auth.dart'
+    show FirebaseAuth, FirebaseUser, AuthResult;
 import 'package:mel/datasources.dart'
     show UserLocalDataSource, UserRemoteDataSource;
 import 'package:mel/entities.dart' show UserEntity;
@@ -56,32 +57,31 @@ class UserRepositoryImpl implements UserRepository {
       return Left(AuthenticationFailure());
     } on NetworkException {
       return Left(NetworkFailure());
+    } on CacheException {
+      return Left(CacheFailure());
     }
   }
 
   @override
   Future<Either<Failure, UserEntity>> currentUser() async {
-    final FirebaseUser firebaseUser = await firebaseAuth.currentUser();
-    if (firebaseUser != null) {
+    try {
+      final FirebaseUser firebaseUser = await firebaseAuth.currentUser();
+      if (firebaseUser == null) return Left(AuthorizationFailure());
+
       if (await networkInfo.isConnected) {
-        try {
-          final result = await remoteDataSource.getUserData(firebaseUser.uid);
-          return Right(result);
-        } on ServerException {
-          return Left(ServerFailure());
-        }
+        final result = await remoteDataSource.getUserData(firebaseUser.uid);
+        localDataSource.cacheUserData(result);
+        return Right(result);
       } else {
-        try {
-          final result = await localDataSource.getLastUserData();
-          return Right(result);
-        } on ServerException {
-          return Left(ServerFailure());
-        } on CacheException {
-          return Left(CacheFailure());
-        }
+        final result = await localDataSource.getLastUserData();
+        return Right(result);
       }
-    } else {
-      return Left(AuthorizationFailure());
+    } on AuthenticationException {
+      return Left(AuthenticationFailure());
+    } on ServerException {
+      return Left(ServerFailure());
+    } on CacheException {
+      return Left(CacheFailure());
     }
   }
 

@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' show Either, None;
 import 'package:mel/core.dart' show Failure;
 import 'package:mel/entities.dart' show UserEntity;
 

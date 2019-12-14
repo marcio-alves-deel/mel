@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart' show Equatable;
-import 'package:meta/meta.dart';
+import 'package:meta/meta.dart' show required;
 
 class UserEntity extends Equatable {
   final String userId;

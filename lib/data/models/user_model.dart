@@ -1,6 +1,6 @@
 import 'package:mel/entities.dart' show UserEntity;
-import 'package:meta/meta.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart' show required;
+import 'package:json_annotation/json_annotation.dart' show JsonSerializable;
 part 'user_model.g.dart';
 
 @JsonSerializable()
