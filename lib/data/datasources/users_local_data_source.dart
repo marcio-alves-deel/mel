@@ -7,7 +7,7 @@ import 'package:meta/meta.dart' show required;
 
 abstract class UserLocalDataSource {
   Future<UserModel> getLastUserData();
-  Future<void> cacheUserData(UserModel modelToCache);
+  Future<void> cacheUserData({UserModel user});
   Future<void> cleanUserData();
 }
 
@@ -20,12 +20,12 @@ class UserLocalDataSourceImpl implements UserLocalDataSource {
       : assert(sharedPreferences != null);
 
   @override
-  Future<void> cacheUserData(UserModel modelToCache) {
-    if (modelToCache == null) throw CacheException();
+  Future<void> cacheUserData({@required UserModel user}) {
+    if (user == null) throw CacheException();
 
     return sharedPreferences.setString(
       CACHED_USER_DATA,
-      json.encode(modelToCache.toJson()),
+      json.encode(user.toJson()),
     );
   }
 
@@ -39,7 +39,8 @@ class UserLocalDataSourceImpl implements UserLocalDataSource {
     final jsonString = sharedPreferences.getString(
       CACHED_USER_DATA,
     );
-    if (jsonString == null) throw CacheException();
+
+    if (jsonString == null) return null;
 
     return Future.value(UserModel.fromJson(json.decode(jsonString)));
   }

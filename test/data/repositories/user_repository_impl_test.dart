@@ -74,11 +74,11 @@ void main() {
     });
   }
 
-  group('authenticating user', () {
+  group('authenticate user', () {
     final tEmail = 'Magdalen_Thiel57@example.net';
     final tPassword = 'AFmY0QP3a0Ybdlp';
     final tUserModel = UserModel(
-      userId: '1',
+      uid: '1',
       firstName: 'Sigmund',
       lastName: 'Ondricka',
       email: tEmail,
@@ -91,7 +91,7 @@ void main() {
         // arrange
         when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
         // act
-        repository.authenticate(tEmail, tPassword);
+        repository.authenticate(email: tEmail, password: tPassword);
         // assert
         verify(mockNetworkInfo.isConnected);
       },
@@ -106,13 +106,13 @@ void main() {
                   email: tEmail, password: tPassword))
               .thenAnswer((_) async => mockAuthResult);
           when(mockAuthResult.user).thenReturn(mockFirebaseUser);
-          when(mockRemoteDataSource.getUserData(any))
+          when(mockRemoteDataSource.getUserData(id: any))
               .thenAnswer((_) async => tUser);
-          final uid = mockFirebaseUser.uid;
           // act
-          final result = await repository.authenticate(tEmail, tPassword);
+          final result =
+              await repository.authenticate(email: tEmail, password: tPassword);
           // assert
-          verify(mockRemoteDataSource.getUserData(uid));
+          verify(mockRemoteDataSource.getUserData(id: mockFirebaseUser.email));
           expect(result, equals(Right(tUser)));
         },
       );
@@ -125,14 +125,13 @@ void main() {
                   email: tEmail, password: tPassword))
               .thenAnswer((_) async => mockAuthResult);
           when(mockAuthResult.user).thenReturn(mockFirebaseUser);
-          when(mockRemoteDataSource.getUserData(any))
+          when(mockRemoteDataSource.getUserData(id: any))
               .thenAnswer((_) async => tUser);
-          final uid = mockFirebaseUser.uid;
           // act
-          await repository.authenticate(tEmail, tPassword);
+          await repository.authenticate(email: tEmail, password: tPassword);
           // assert
-          verify(mockRemoteDataSource.getUserData(uid));
-          verify(mockLocalDataSource.cacheUserData(tUser));
+          verify(mockRemoteDataSource.getUserData(id: mockFirebaseUser.email));
+          verify(mockLocalDataSource.cacheUserData(user: tUser));
         },
       );
       test(
@@ -143,7 +142,8 @@ void main() {
                   email: tEmail, password: tPassword))
               .thenThrow(AuthenticationException());
           // act
-          final result = await repository.authenticate(tEmail, tPassword);
+          final result =
+              await repository.authenticate(email: tEmail, password: tPassword);
           // assert
           verifyZeroInteractions(mockRemoteDataSource);
           verifyZeroInteractions(mockLocalDataSource);
@@ -158,7 +158,8 @@ void main() {
                   email: tEmail, password: tPassword))
               .thenThrow(ServerException());
           // act
-          final result = await repository.authenticate(tEmail, tPassword);
+          final result =
+              await repository.authenticate(email: tEmail, password: tPassword);
           // assert
           verifyZeroInteractions(mockRemoteDataSource);
           verifyZeroInteractions(mockLocalDataSource);
@@ -173,7 +174,7 @@ void main() {
         // arrange
         when(mockNetworkInfo.isConnected).thenAnswer((_) async => false);
         // act
-        repository.authenticate(tEmail, tPassword);
+        repository.authenticate(email: tEmail, password: tPassword);
         // assert
         verify(mockNetworkInfo.isConnected);
       },
@@ -188,7 +189,8 @@ void main() {
                   email: tEmail, password: tPassword))
               .thenThrow(NetworkException());
           // act
-          final result = await repository.authenticate(tEmail, tPassword);
+          final result =
+              await repository.authenticate(email: tEmail, password: tPassword);
           // assert
           expect(result, equals(Left(NetworkFailure())));
           verifyZeroInteractions(mockRemoteDataSource);
@@ -198,9 +200,9 @@ void main() {
     });
   });
 
-  group('getting current user', () {
+  group('current user', () {
     final tUserModel = UserModel(
-      userId: '1',
+      uid: '1',
       firstName: 'Sigmund',
       lastName: 'Ondricka',
       email: "Magdalen_Thiel57@example.net",
@@ -214,7 +216,7 @@ void main() {
         when(mockFirebaseAuth.currentUser())
             .thenThrow(AuthenticationException());
         // act
-        final result = await repository.currentUser();
+        final result = await repository.current();
         // assert
         expect(result, Left(AuthenticationFailure()));
       },
@@ -227,10 +229,10 @@ void main() {
           // arrange
           when(mockFirebaseAuth.currentUser())
               .thenAnswer((_) async => mockFirebaseUser);
-          when(mockRemoteDataSource.getUserData(any))
+          when(mockRemoteDataSource.getUserData(id: any))
               .thenAnswer((_) async => tUser);
           // act
-          final result = await repository.currentUser();
+          final result = await repository.current();
           // assert
           expect(result, equals(Right(tUser)));
         },
@@ -241,12 +243,12 @@ void main() {
           // arrange
           when(mockFirebaseAuth.currentUser())
               .thenAnswer((_) async => mockFirebaseUser);
-          when(mockRemoteDataSource.getUserData(any))
+          when(mockRemoteDataSource.getUserData(id: any))
               .thenAnswer((_) async => tUser);
           // act
-          await repository.currentUser();
+          await repository.current();
           // assert
-          verify(mockLocalDataSource.cacheUserData(tUser));
+          verify(mockLocalDataSource.cacheUserData(user: tUser));
         },
       );
       test(
@@ -255,7 +257,7 @@ void main() {
           // arrange
           when(mockFirebaseAuth.currentUser()).thenThrow(ServerException());
           // act
-          final result = await repository.currentUser();
+          final result = await repository.current();
           // assert
           verifyZeroInteractions(mockLocalDataSource);
           expect(result, Left(ServerFailure()));
@@ -267,14 +269,14 @@ void main() {
           // arrange
           when(mockFirebaseAuth.currentUser())
               .thenAnswer((_) async => mockFirebaseUser);
-          when(mockRemoteDataSource.getUserData(any))
+          when(mockRemoteDataSource.getUserData(id: any))
               .thenAnswer((_) async => tUser);
-          when(mockLocalDataSource.cacheUserData(tUser))
+          when(mockLocalDataSource.cacheUserData(user: tUser))
               .thenThrow(CacheException());
           // act
-          final result = await repository.currentUser();
+          final result = await repository.current();
           // assert
-          verify(mockLocalDataSource.cacheUserData(tUser));
+          verify(mockLocalDataSource.cacheUserData(user: tUser));
           expect(result, Left(CacheFailure()));
         },
       );
@@ -282,7 +284,7 @@ void main() {
 
     runTestsOffline(() {
       test(
-        'should return local data when local dara return with success',
+        'should return local data when access to local data return with success',
         () async {
           // arrange
           when(mockFirebaseAuth.currentUser())
@@ -290,7 +292,7 @@ void main() {
           when(mockLocalDataSource.getLastUserData())
               .thenAnswer((_) async => tUser);
           // act
-          final result = await repository.currentUser();
+          final result = await repository.current();
           // assert
           expect(result, equals(Right(tUser)));
         },
@@ -302,10 +304,135 @@ void main() {
           // arrange
           when(mockFirebaseAuth.currentUser()).thenThrow(ServerException());
           // act
-          final result = await repository.currentUser();
+          final result = await repository.current();
           // assert
           verifyZeroInteractions(mockLocalDataSource);
           expect(result, Left(ServerFailure()));
+        },
+      );
+    });
+  });
+
+  group('sign out', () {
+    test(
+      'should return server failure on server error',
+      () async {
+        // arrange
+        when(mockLocalDataSource.cleanUserData()).thenThrow(ServerException());
+        // act
+        final result = await repository.signOut();
+        // assert
+        expect(result, Left(ServerFailure()));
+      },
+    );
+  });
+
+  group('register', () {
+    final tFirstName = 'Sigmund';
+    final tLastName = 'Ondricka';
+    final tPassword = 'jh@Jh3bd7';
+    final tEmail = "Magdalen_Thiel57@example.net";
+    final tBirthdate = null;
+    final tAvatar = null;
+
+    final tUserModel = UserModel(
+        uid: null,
+        firstName: tFirstName,
+        lastName: tLastName,
+        email: tEmail,
+        birthDate: tBirthdate,
+        avatar: tAvatar);
+    final UserEntity tUser = tUserModel;
+
+    runTestsOnline(() {
+      test(
+        'should return remote data when user creation is success',
+        () async {
+          // arrange
+          when(mockFirebaseAuth.createUserWithEmailAndPassword(
+                  email: tEmail, password: tPassword))
+              .thenAnswer((_) async => mockAuthResult);
+          when(mockAuthResult.user).thenReturn(mockFirebaseUser);
+          when(mockRemoteDataSource.getUserData(id: any))
+              .thenAnswer((_) async => tUser);
+          // act
+          final result = await repository.register(
+              email: tEmail,
+              password: tPassword,
+              firstName: tFirstName,
+              lastName: tLastName,
+              birthDate: tBirthdate,
+              avatar: tAvatar);
+          // assert
+          expect(result, equals(Right(tUser)));
+          verify(mockRemoteDataSource.createUser(user: tUser));
+          verify(mockLocalDataSource.cacheUserData(user: tUser));
+          verify(mockFirebaseAuth.signInWithEmailAndPassword(
+              email: tEmail, password: tPassword));
+        },
+      );
+      test(
+        'should return remote data when user creation is success',
+        () async {
+          // arrange
+          when(mockFirebaseAuth.createUserWithEmailAndPassword(
+                  email: tEmail, password: tPassword))
+              .thenAnswer((_) async => mockAuthResult);
+          when(mockAuthResult.user).thenReturn(mockFirebaseUser);
+          when(mockRemoteDataSource.getUserData(id: any))
+              .thenAnswer((_) async => tUser);
+          // act
+          final result = await repository.register(
+              email: tEmail,
+              password: tPassword,
+              firstName: tFirstName,
+              lastName: tLastName,
+              birthDate: tBirthdate,
+              avatar: tAvatar);
+          // assert
+          expect(result, equals(Right(tUser)));
+          verify(mockRemoteDataSource.createUser(user: tUser));
+          verify(mockLocalDataSource.cacheUserData(user: tUser));
+          verify(mockFirebaseAuth.signInWithEmailAndPassword(
+              email: tEmail, password: tPassword));
+        },
+      );
+      test(
+        'should return server failure on server error',
+        () async {
+          // arrange
+          when(mockFirebaseAuth.createUserWithEmailAndPassword(
+                  email: tEmail, password: tPassword))
+              .thenThrow(ServerException());
+          // act
+          final result = await repository.register(
+              email: tEmail,
+              password: tPassword,
+              firstName: tFirstName,
+              lastName: tLastName,
+              birthDate: tBirthdate,
+              avatar: tAvatar);
+          // assert
+          verifyZeroInteractions(mockLocalDataSource);
+          verifyZeroInteractions(mockRemoteDataSource);
+          expect(result, Left(ServerFailure()));
+        },
+      );
+    });
+
+    runTestsOffline(() {
+      test(
+        'should return local data when access to local data return with success',
+        () async {
+          // arrange
+          when(mockFirebaseAuth.currentUser())
+              .thenAnswer((_) async => mockFirebaseUser);
+          when(mockLocalDataSource.getLastUserData())
+              .thenAnswer((_) async => tUser);
+          // act
+          final result = await repository.current();
+          // assert
+          expect(result, equals(Right(tUser)));
         },
       );
     });

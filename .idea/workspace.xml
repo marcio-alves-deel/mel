@@ -11,32 +11,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f518cb45-87d2-4ace-ac55-b8789c5ebbc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/mel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mel.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/testfile.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/testfile.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/network/network_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/network/network_info.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/usecases/usecases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/usecases/usecases.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/datasources/users_local_data_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/datasources/users_local_data_source.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/datasources/users_remote_data_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/datasources/users_remote_data_source.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/repositories/user_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/repositories/user_repository_impl.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/datasources.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/datasources.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/entities/user_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/entities/user_entity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/repositories/user_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/repositories/user_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/sign_in.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/sign_out.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/usecases/sign_out.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/domain/usecases/sign_up.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/usecases.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/usecases.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/domain/usecases/sign_in_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/domain/usecases/sign_out_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/domain/usecases/sign_out_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/domain/usecases/sign_up_test.dart" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,10 +31,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/data/datasources/user_local_data_source_test.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/domain/usecases/authenticate_test.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="540">
+              <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -62,10 +55,53 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/domain/usecases/register_test.dart">
+        <entry file="file://$PROJECT_DIR$/lib/data/datasources/users_remote_data_source.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-28">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="270">
+              <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/domain/usecases/authenticate.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="46" selection-start-column="46" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/domain/usecases/register.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/domain/usecases/sign_out.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="113" column="16" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="16" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -73,11 +109,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/data/datasources/users_local_data_source.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1235">
-              <caret line="200" column="36" selection-start-line="200" selection-start-column="36" selection-end-line="200" selection-end-column="36" />
+            <state relative-caret-position="570">
+              <caret line="38" column="50" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/data/repositories/user_repository_impl.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="101" column="23" lean-forward="true" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#65#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/domain/usecases/current_user.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,7 +152,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/lib/data/datasources/users_local_data_source.dart" />
+        <option value="$PROJECT_DIR$/test/data/datasources/user_local_data_source_test.dart" />
+        <option value="$PROJECT_DIR$/lib/data/repositories/user_repository_impl.dart" />
         <option value="$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart" />
+        <option value="$PROJECT_DIR$/lib/data/datasources/users_remote_data_source.dart" />
       </list>
     </option>
   </component>
@@ -101,10 +167,11 @@
         <option value="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" />
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/.idea/runConfigurations/tests_in_test.xml" />
+        <option value="$PROJECT_DIR$/.idea/dictionaries/marciomontenegro.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -113,12 +180,106 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="mel" type="b2602c69:ProjectViewProjectNode" />
               <item name="mel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="error" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="usecases" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="datasources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="usecases" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="generated" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mel" type="b2602c69:ProjectViewProjectNode" />
@@ -135,7 +296,35 @@
               <item name="mel" type="b2602c69:ProjectViewProjectNode" />
               <item name="mel" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="datasources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mel" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mel" type="b2602c69:ProjectViewProjectNode" />
@@ -161,8 +350,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,10 +383,36 @@
       <option name="testRunnerOptions" value="--watch --no-machine" />
       <method v="2" />
     </configuration>
+    <configuration name="cacheUserData" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="cacheUserData" />
+      <option name="testFile" value="$PROJECT_DIR$/test/data/datasources/user_local_data_source_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cleanUserData" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="cleanUserData" />
+      <option name="testFile" value="$PROJECT_DIR$/test/data/datasources/user_local_data_source_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="should return remote data when user creation is success" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="should return remote data when user creation is success" />
+      <option name="testFile" value="$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Dart Test.tests in mel" />
+      <item itemvalue="Flutter.main.dart" />
       <item itemvalue="Flutter Test.tests in test" />
+      <item itemvalue="Flutter Test.cleanUserData" />
+      <item itemvalue="Flutter Test.cacheUserData" />
+      <item itemvalue="Flutter Test.should return remote data when user creation is success" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter Test.should return remote data when user creation is success" />
+        <item itemvalue="Flutter Test.cacheUserData" />
+        <item itemvalue="Flutter Test.cleanUserData" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -212,44 +425,52 @@
       <option name="presentableId" value="Default" />
       <updated>1575390732938</updated>
     </task>
+    <task id="LOCAL-00001" summary="Modifying tests">
+      <created>1576336856671</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576336856671</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="tests_in_test - 2019.12.10 at 19h 45m 40s.xml">
+    <history-entry file="should_return_remote_data_when_user_creation_is_success - 2019.12.14 at 13h 21m 43s.xml">
+      <configuration name="should return remote data when user creation is success" configurationId="FlutterTestConfigType" />
+    </history-entry>
+    <history-entry file="should_return_remote_data_when_user_creation_is_success - 2019.12.14 at 13h 22m 25s.xml">
+      <configuration name="should return remote data when user creation is success" configurationId="FlutterTestConfigType" />
+    </history-entry>
+    <history-entry file="should_return_remote_data_when_user_creation_is_success - 2019.12.14 at 13h 22m 48s.xml">
+      <configuration name="should return remote data when user creation is success" configurationId="FlutterTestConfigType" />
+    </history-entry>
+    <history-entry file="should_return_remote_data_when_user_creation_is_success - 2019.12.14 at 13h 24m 31s.xml">
+      <configuration name="should return remote data when user creation is success" configurationId="FlutterTestConfigType" />
+    </history-entry>
+    <history-entry file="should_return_remote_data_when_user_creation_is_success - 2019.12.14 at 13h 25m 31s.xml">
+      <configuration name="should return remote data when user creation is success" configurationId="FlutterTestConfigType" />
+    </history-entry>
+    <history-entry file="tests_in_test - 2019.12.14 at 13h 32m 00s.xml">
       <configuration name="tests in test" configurationId="FlutterTestConfigType" />
     </history-entry>
-    <history-entry file="tests_in_test - 2019.12.14 at 12h 02m 08s.xml">
+    <history-entry file="tests_in_test - 2019.12.14 at 13h 32m 50s.xml">
       <configuration name="tests in test" configurationId="FlutterTestConfigType" />
     </history-entry>
-    <history-entry file="Run_all_Tests - 2019.12.14 at 12h 03m 05s.xml">
-      <configuration name="Run all Tests" configurationId="DartTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Run_all_Tests - 2019.12.14 at 12h 03m 19s.xml">
-      <configuration name="Run all Tests" configurationId="DartTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Run_all_Tests - 2019.12.14 at 12h 03m 21s.xml">
-      <configuration name="Run all Tests" configurationId="DartTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="tests_in_test - 2019.12.14 at 12h 11m 14s.xml">
+    <history-entry file="tests_in_test - 2019.12.14 at 13h 33m 24s.xml">
       <configuration name="tests in test" configurationId="FlutterTestConfigType" />
     </history-entry>
-    <history-entry file="tests_in_mel_test - 2019.12.14 at 12h 16m 04s.xml">
-      <configuration name="tests in mel/test" configurationId="DartTestRunConfigurationType" />
+    <history-entry file="tests_in_test - 2019.12.14 at 13h 34m 08s.xml">
+      <configuration name="tests in test" configurationId="FlutterTestConfigType" />
     </history-entry>
-    <history-entry file="tests_in_mel - 2019.12.14 at 12h 17m 40s.xml">
-      <configuration name="tests in mel" configurationId="DartTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="tests_in_mel - 2019.12.14 at 12h 19m 00s.xml">
-      <configuration name="tests in mel" configurationId="DartTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="tests_in_test - 2019.12.14 at 12h 19m 13s.xml">
+    <history-entry file="tests_in_test - 2019.12.17 at 16h 59m 19s.xml">
       <configuration name="tests in test" configurationId="FlutterTestConfigType" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Build Variants" sideWeight="0.50230414" side_tool="true" weight="0.24821173" />
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49769586" visible="true" weight="0.24821173" />
       <window_info id="Structure" order="2" side_tool="true" />
@@ -258,9 +479,8 @@
       <window_info id="Resources Explorer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Logcat" weight="0.32891566" />
-      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.30722892" />
+      <window_info id="Build Variants" order="8" sideWeight="0.50230414" side_tool="true" weight="0.24821173" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.30120483" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.32891566" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32891566" />
@@ -268,30 +488,26 @@
       <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.32891566" />
-      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
-      <window_info anchor="right" id="Assistant" weight="0.33476394" />
-      <window_info anchor="right" id="Coverage" side_tool="true" />
+      <window_info anchor="bottom" id="Logcat" order="8" weight="0.32891566" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Flutter Inspector" order="2" weight="0.3297568" />
       <window_info anchor="right" id="Flutter Outline" order="3" weight="0.3297568" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
+      <window_info anchor="right" id="Assistant" order="6" weight="0.33476394" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modifying tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifying tests" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/mel$register_test_dart.json" NAME="register_test.dart Coverage Results" MODIFIED="1576336191596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="DartCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" CONTEXT_FILE_PATH="$PROJECT_DIR$/test/domain/usecases/register_test.dart" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/domain/usecases/authenticate_test.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/domain/usecases/register_test.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-28">
@@ -302,10 +518,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.packages">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/domain/usecases/current_user_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/core/network/network_info_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/usecases.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" selection-start-column="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/data/repositories/user_repository_impl 2.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/error/exceptions 2.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/error/exceptions.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/error/failures.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/domain/entities/user_entity.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/domain/repositories/user_repository.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/domain/usecases/authenticate.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="46" selection-start-column="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/domain/usecases/current_user.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/domain/usecases/register.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/domain/usecases/sign_out.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/data/datasources/user_local_data_source_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/domain/usecases/authenticate_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/data/datasources/users_local_data_source.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="50" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/data/repositories/user_repository_impl_test.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1235">
-          <caret line="200" column="36" selection-start-line="200" selection-start-column="36" selection-end-line="200" selection-end-column="36" />
+        <state relative-caret-position="185">
+          <caret line="113" column="16" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/data/datasources/users_remote_data_source.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/data/repositories/user_repository_impl.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="101" column="23" lean-forward="true" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

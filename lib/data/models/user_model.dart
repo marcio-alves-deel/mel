@@ -6,14 +6,14 @@ part 'user_model.g.dart';
 @JsonSerializable()
 class UserModel extends UserEntity {
   UserModel({
-    @required userId,
+    @required uid,
     @required email,
     @required firstName,
     @required lastName,
     birthDate,
     avatar,
   }) : super(
-          userId: userId,
+          uid: uid,
           email: email,
           firstName: firstName,
           lastName: lastName,
