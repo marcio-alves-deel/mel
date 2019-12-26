@@ -121,6 +121,13 @@
             </list>
           </value>
         </entry>
+        <entry key="cloud_firestore">
+          <value>
+            <list>
+              <option value="$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.13.0+1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="code_builder">
           <value>
             <list>
@@ -603,6 +610,7 @@
       <root url="file://$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/built_value_generator-6.8.2/lib" />
       <root url="file://$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.1.2/lib" />
       <root url="file://$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/checked_yaml-1.0.2/lib" />
+      <root url="file://$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.13.0+1/lib" />
       <root url="file://$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/code_builder-3.2.0/lib" />
       <root url="file://$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11/lib" />
       <root url="file://$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/convert-2.1.1/lib" />
