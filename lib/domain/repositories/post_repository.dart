@@ -4,15 +4,14 @@ import 'package:mel/entities.dart' show CommentEntity, FilterEntity, PostEntity;
 import 'package:mel/models.dart' show PhotoModel, LocationModel, PetModel;
 
 abstract class PostRepository {
-  Future<Either<Failure, PostEntity>> create({
-    String uid,
-    String title,
-    String type,
-    String description,
-    List<PhotoModel> gallery,
-    LocationModel location,
-    PetModel petInfo,
-  });
+  Future<Either<Failure, PostEntity>> create(
+      {String uid,
+      String title,
+      String type,
+      String description,
+      List<PhotoModel> gallery,
+      LocationModel location,
+      PetModel petInfo});
 
   Future<Either<Failure, PostEntity>> archive({String id});
 

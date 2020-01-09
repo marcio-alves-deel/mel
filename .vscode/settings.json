@@ -1,9 +1,15 @@
 {
-    "cSpell.ignoreWords": [
-        "cupertino",
-        "dartz",
-        "json",
-        "mockito",
-        "serializable"
-    ]
+  "cSpell.ignoreWords": [
+    "cupertino",
+    "dartz",
+    "json",
+    "mockito",
+    "serializable"
+  ],
+  "material-icon-theme.folders.associations": {
+    "global_state": "global",
+    "ui": "layout",
+    "bloc": "controller",
+    "datasources": "data"
+  }
 }
