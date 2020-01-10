@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mel/pages.dart' show SignInPage;
+import 'package:mel/pages.dart' show SignInPage, SignUpPage;
 import 'package:mel/widgets.dart' show SignInUpIndicator, SignInUpPageView;
 
 class HomeLayout extends StatefulWidget {
@@ -11,22 +11,13 @@ class HomeLayout extends StatefulWidget {
 class HomeLayoutState extends State<HomeLayout> {
   final _controller = new PageController();
 
-  final List<Widget> _pages = <Widget>[
-    new Container(
-      child: Center(
-        child: SignInPage(),
-      ),
-    ),
-    new Container(
-      child: Center(
-        child: Text('Page 2'),
-      ),
-    )
-  ];
+  final List<Widget> _pages = <Widget>[SignInPage(), SignUpPage()];
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomPadding: false,
       body: new GestureDetector(
         onTap: () {
           FocusScopeNode currentFocus = FocusScope.of(context);

@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mel/widgets.dart' show Button, InputField;
 
-class SignInPage extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  State createState() => new SignInPageState();
+  State createState() => new SignUpPageState();
 }
 
-class SignInPageState extends State<SignInPage> {
-  final COLOR_THEME = Color(0xffF4985F);
+class SignUpPageState extends State<SignUpPage> {
+  final COLOR_THEME = Color(0xffE27BCE);
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +28,14 @@ class SignInPageState extends State<SignInPage> {
               ],
             ),
             SizedBox(
-              height: 100,
+              height: 50,
             ),
             SingleChildScrollView(
               child: Padding(
                 padding: EdgeInsets.only(
                   bottom: bottom > 0.0 ? bottom - 130 : bottom,
                 ),
-                child: _signInForm(),
+                child: _signUpForm(),
               ),
             ),
             _footer()
@@ -47,6 +47,8 @@ class SignInPageState extends State<SignInPage> {
 
   Widget _header() {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         _title(),
         SizedBox(
@@ -58,19 +60,31 @@ class SignInPageState extends State<SignInPage> {
   }
 
   Widget _title() {
-    return new Text(
-      'Welcome,',
-      style: TextStyle(
-        fontSize: 40,
+    return new RichText(
+      text: TextSpan(
+        text: 'Hello,',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 40,
+        ),
+        children: <TextSpan>[
+          TextSpan(
+            text: ' Dear',
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
       ),
     );
   }
 
   Widget _subtitle() {
     return Container(
-      width: 170,
+      width: 250,
       child: new Text(
-        'Enter your credentials to start using Mel',
+        'Fill the form below \nin order to create your account',
         style: TextStyle(
           fontSize: 16,
         ),
@@ -78,7 +92,7 @@ class SignInPageState extends State<SignInPage> {
     );
   }
 
-  Widget _signInForm() {
+  Widget _signUpForm() {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 5,
@@ -86,9 +100,10 @@ class SignInPageState extends State<SignInPage> {
       child: Column(
         children: <Widget>[
           InputField(
-              labelText: 'Email',
-              color: COLOR_THEME,
-              hintText: 'enter your email'),
+            labelText: 'Email',
+            color: COLOR_THEME,
+            hintText: 'enter a valid email',
+          ),
           SizedBox(
             height: 15,
           ),
@@ -96,8 +111,16 @@ class SignInPageState extends State<SignInPage> {
             labelText: 'Password',
             color: COLOR_THEME,
             obscureText: true,
-            hintText: 'enter your password',
+            hintText: 'create a password',
           ),
+          SizedBox(
+            height: 15,
+          ),
+          InputField(
+              labelText: 'Password confirmation',
+              color: COLOR_THEME,
+              obscureText: true,
+              hintText: 'confirm your password'),
         ],
       ),
     );
@@ -110,27 +133,10 @@ class SignInPageState extends State<SignInPage> {
           height: 110,
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[_forgotPassword(), Button(color: COLOR_THEME)],
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[Button(color: COLOR_THEME)],
         ),
       ],
-    );
-  }
-
-  Widget _forgotPassword() {
-    return Expanded(
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: () {},
-          child: Text(
-            'Forgot password?',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ),
     );
   }
 }
