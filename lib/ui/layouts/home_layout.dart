@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mel/pages.dart' show SignInPage, SignUpPage;
-import 'package:mel/widgets.dart' show SignInUpIndicator, SignInUpPageView;
+import 'package:mel/widgets.dart'
+    show SignInUpFooter, SignInUpIndicator, SignInUpPageView;
 
 class HomeLayout extends StatefulWidget {
   @override
@@ -28,7 +29,13 @@ class HomeLayoutState extends State<HomeLayout> {
         child: new Stack(
           children: <Widget>[
             new SignInUpPageView(controller: _controller, pages: _pages),
-            _body()
+            _body(),
+            Positioned(
+              bottom: 40,
+              left: 30,
+              right: 30,
+              child: new SignInUpFooter(controller: _controller),
+            ),
           ],
         ),
       ),

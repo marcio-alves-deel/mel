@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mel/widgets.dart' show Button, InputField;
 
 class SignUpPage extends StatefulWidget {
@@ -13,33 +14,35 @@ class SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     final bottom = MediaQuery.of(context).viewInsets.bottom;
-    return new Container(
-      width: double.infinity,
-      color: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+
+    return Center(
+      child: new SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          color: Colors.transparent,
+          child: Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                _header(),
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    _header(),
+                  ],
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    bottom: bottom,
+                  ),
+                  child: _signUpForm(),
+                ),
               ],
             ),
-            SizedBox(
-              height: 50,
-            ),
-            SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.only(
-                  bottom: bottom > 0.0 ? bottom - 130 : bottom,
-                ),
-                child: _signUpForm(),
-              ),
-            ),
-            _footer()
-          ],
+          ),
         ),
       ),
     );
@@ -63,9 +66,10 @@ class SignUpPageState extends State<SignUpPage> {
     return new RichText(
       text: TextSpan(
         text: 'Hello,',
-        style: TextStyle(
+        style: GoogleFonts.quicksand(
           color: Colors.black,
           fontSize: 40,
+          fontWeight: FontWeight.w400,
         ),
         children: <TextSpan>[
           TextSpan(
@@ -93,49 +97,31 @@ class SignUpPageState extends State<SignUpPage> {
   }
 
   Widget _signUpForm() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 5,
-      ),
-      child: Column(
-        children: <Widget>[
-          InputField(
-            labelText: 'Email',
-            color: COLOR_THEME,
-            hintText: 'enter a valid email',
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          InputField(
-            labelText: 'Password',
-            color: COLOR_THEME,
-            obscureText: true,
-            hintText: 'create a password',
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          InputField(
-              labelText: 'Password confirmation',
-              color: COLOR_THEME,
-              obscureText: true,
-              hintText: 'confirm your password'),
-        ],
-      ),
-    );
-  }
-
-  Widget _footer() {
     return Column(
       children: <Widget>[
+        InputField(
+          labelText: 'Email',
+          color: COLOR_THEME,
+          hintText: 'enter a valid email',
+          keyboardType: TextInputType.emailAddress,
+        ),
         SizedBox(
-          height: 110,
+          height: 15,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[Button(color: COLOR_THEME)],
+        InputField(
+          labelText: 'Password',
+          color: COLOR_THEME,
+          obscureText: true,
+          hintText: 'create a password',
         ),
+        SizedBox(
+          height: 15,
+        ),
+        InputField(
+            labelText: 'Password confirmation',
+            color: COLOR_THEME,
+            obscureText: true,
+            hintText: 'confirm your password'),
       ],
     );
   }

@@ -4,12 +4,16 @@ import 'package:flutter/services.dart';
 import 'package:flutter_conditional_rendering/conditional.dart'
     show Conditional;
 
-Widget InputField({
-  String labelText = '',
-  Color color = Colors.black,
-  bool obscureText = false,
-  String hintText = '',
-}) {
+Widget InputField(
+    {String labelText = '',
+    Color color = Colors.black,
+    bool obscureText = false,
+    String hintText = '',
+    bool autocorrect = false,
+    onChanged,
+    focusNode,
+    controller,
+    TextInputType keyboardType = TextInputType.text}) {
   return Column(
     children: <Widget>[
       Row(
@@ -27,8 +31,10 @@ Widget InputField({
         ],
       ),
       TextFormField(
+        focusNode: focusNode,
+        onChanged: onChanged,
+        controller: controller,
         decoration: InputDecoration(
-          fillColor: Colors.white,
           border: UnderlineInputBorder(
             borderSide: BorderSide(color: const Color(0xFFEDEDED)),
           ),
@@ -41,9 +47,12 @@ Widget InputField({
           hintText: hintText,
         ),
         obscureText: obscureText,
-        style: TextStyle(fontSize: 14),
-        autocorrect: false,
-        keyboardType: TextInputType.emailAddress,
+        style: TextStyle(
+          fontSize: 14,
+          color: Colors.black,
+        ),
+        autocorrect: autocorrect,
+        keyboardType: keyboardType,
         enableSuggestions: true,
       ),
     ],

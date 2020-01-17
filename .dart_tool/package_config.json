@@ -164,8 +164,14 @@
       "languageVersion": "2.2"
     },
     {
+      "name": "date_util",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/date_util-0.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "1.20"
+    },
+    {
       "name": "equatable",
-      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/equatable-1.0.1",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/equatable-1.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -200,10 +206,34 @@
       "languageVersion": "2.2"
     },
     {
+      "name": "flutter_google_places",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/flutter_google_places-0.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "flutter_keyboard_visibility",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/flutter_keyboard_visibility-0.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
+      "name": "flutter_places_autocomplete",
+      "rootUri": "../../flutter_places_autocomplete",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/marciomontenegro/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "2.2"
+    },
+    {
+      "name": "flutter_typeahead",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/flutter_typeahead-1.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
     },
     {
       "name": "front_end",
@@ -230,6 +260,12 @@
       "languageVersion": "2.3"
     },
     {
+      "name": "google_maps_webservice",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/google_maps_webservice-0.0.16",
+      "packageUri": "lib/",
+      "languageVersion": "1.20"
+    },
+    {
       "name": "graphs",
       "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/graphs-0.2.0",
       "packageUri": "lib/",
@@ -243,9 +279,9 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/http-0.12.0+2",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/http-0.12.0+4",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.4"
     },
     {
       "name": "http_multi_server",
@@ -416,6 +452,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "rxdart",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/rxdart-0.22.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "sailor",
       "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/sailor-0.6.0",
       "packageUri": "lib/",
@@ -554,7 +596,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-01-10T02:31:24.787307Z",
+  "generated": "2020-01-16T00:24:35.877530Z",
   "generator": "pub",
-  "generatorVersion": "2.8.0-dev.0.0.flutter-c0ca187f26"
+  "generatorVersion": "2.8.0-dev.1.0.flutter-fe666ce592"
 }

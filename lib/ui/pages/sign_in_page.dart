@@ -13,33 +13,29 @@ class SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     final bottom = MediaQuery.of(context).viewInsets.bottom;
-    return new Container(
-      width: double.infinity,
-      color: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+    return Center(
+      child: new SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          color: Colors.transparent,
+          child: Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 _header(),
+                SizedBox(
+                  height: 100,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    bottom: bottom,
+                  ),
+                  child: _signInForm(),
+                ),
               ],
             ),
-            SizedBox(
-              height: 100,
-            ),
-            SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.only(
-                  bottom: bottom > 0.0 ? bottom - 130 : bottom,
-                ),
-                child: _signInForm(),
-              ),
-            ),
-            _footer()
-          ],
+          ),
         ),
       ),
     );
@@ -58,79 +54,54 @@ class SignInPageState extends State<SignInPage> {
   }
 
   Widget _title() {
-    return new Text(
-      'Welcome,',
-      style: TextStyle(
-        fontSize: 40,
-      ),
-    );
-  }
-
-  Widget _subtitle() {
-    return Container(
-      width: 170,
-      child: new Text(
-        'Enter your credentials to start using Mel',
-        style: TextStyle(
-          fontSize: 16,
-        ),
-      ),
-    );
-  }
-
-  Widget _signInForm() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 5,
-      ),
-      child: Column(
-        children: <Widget>[
-          InputField(
-              labelText: 'Email',
-              color: COLOR_THEME,
-              hintText: 'enter your email'),
-          SizedBox(
-            height: 15,
-          ),
-          InputField(
-            labelText: 'Password',
-            color: COLOR_THEME,
-            obscureText: true,
-            hintText: 'enter your password',
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _footer() {
-    return Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        SizedBox(
-          height: 110,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[_forgotPassword(), Button(color: COLOR_THEME)],
+        new Text(
+          'Welcome,',
+          style: TextStyle(
+            fontSize: 40,
+          ),
         ),
       ],
     );
   }
 
-  Widget _forgotPassword() {
-    return Expanded(
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: () {},
-          child: Text(
-            'Forgot password?',
+  Widget _subtitle() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        Container(
+          width: 170,
+          child: new Text(
+            'Enter your credentials to start using Mel',
             style: TextStyle(
-              fontWeight: FontWeight.bold,
+              fontSize: 16,
             ),
           ),
         ),
-      ),
+      ],
+    );
+  }
+
+  Widget _signInForm() {
+    return Column(
+      children: <Widget>[
+        InputField(
+            labelText: 'Email',
+            color: COLOR_THEME,
+            keyboardType: TextInputType.emailAddress,
+            hintText: 'enter your email'),
+        SizedBox(
+          height: 15,
+        ),
+        InputField(
+          labelText: 'Password',
+          color: COLOR_THEME,
+          obscureText: true,
+          hintText: 'enter your password',
+        ),
+      ],
     );
   }
 }
