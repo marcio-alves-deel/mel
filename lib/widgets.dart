@@ -6,3 +6,8 @@ export 'ui/widgets/sign_in_up_footer_widget.dart';
 export 'ui/widgets/back_button_widget.dart';
 export 'ui/widgets/dropdown_input_widget.dart';
 export 'ui/widgets/location_input_widget.dart';
+export 'ui/widgets/avatar_select_widget.dart';
+export 'ui/widgets/navigation_bar_widget.dart';
+export 'ui/widgets/filter_item_widget.dart';
+export 'ui/widgets/pet_size_options_widget.dart';
+export 'ui/widgets/filters_widget.dart';

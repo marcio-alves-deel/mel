@@ -126,10 +126,10 @@ class InputBirthdatePageState extends State<InputBirthdatePage> {
       'Birthdate',
       style: GoogleFonts.quicksand(
         color: Colors.black,
-        fontWeight: FontWeight.w600,
         fontSize: 40,
       ),
     );
+    ;
   }
 
   Widget _subtitle() {

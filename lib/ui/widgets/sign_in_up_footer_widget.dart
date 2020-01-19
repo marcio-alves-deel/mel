@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mel/layouts.dart';
 import 'package:mel/pages.dart' show ForgotPasswordPage, StepPage;
 import 'package:mel/widgets.dart' show Button;
 
@@ -20,13 +21,20 @@ class SignInUpFooter extends AnimatedWidget {
         Button(
           onPress: () {
             if (initial)
-              return null;
+              _signIn(context);
             else
               _signUp(context);
           },
           color: initial ? Color(0xffF4985F) : Color(0xffE27BCE),
         ),
       ],
+    );
+  }
+
+  Future<void> _signIn(context) {
+    return Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => FeedTabLayout()),
     );
   }
 
@@ -46,10 +54,11 @@ class SignInUpFooter extends AnimatedWidget {
           color: Colors.transparent,
           child: InkWell(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
-              );
+              if (controller.page == 0)
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+                );
             },
             child: Container(
               child: Text(

@@ -36,10 +36,10 @@ Widget InputField(
         controller: controller,
         decoration: InputDecoration(
           border: UnderlineInputBorder(
-            borderSide: BorderSide(color: const Color(0xFFEDEDED)),
+            borderSide: BorderSide(color: const Color(0xFFDEDEDD)),
           ),
           enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: const Color(0xFFEDEDED)),
+            borderSide: BorderSide(color: const Color(0xFFDEDEDD)),
           ),
           focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: color),

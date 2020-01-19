@@ -224,6 +224,12 @@
       "languageVersion": "2.1"
     },
     {
+      "name": "flutter_plugin_android_lifecycle",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/marciomontenegro/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -302,6 +308,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "image_picker",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.3+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "io",
       "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/io-0.3.3",
       "packageUri": "lib/",
@@ -376,6 +388,12 @@
     {
       "name": "node_io",
       "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/node_io-1.0.1+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "overlay_container",
+      "rootUri": "file:///Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/overlay_container-0.0.4+1",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -596,7 +614,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-01-16T00:24:35.877530Z",
+  "generated": "2020-01-18T21:52:59.456717Z",
   "generator": "pub",
   "generatorVersion": "2.8.0-dev.1.0.flutter-fe666ce592"
 }

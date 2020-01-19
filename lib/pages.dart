@@ -5,3 +5,6 @@ export 'ui/pages/step_page.dart';
 export 'ui/pages/input_name_page.dart';
 export 'ui/pages/input_birthdate_page.dart';
 export 'ui/pages/input_location_page.dart';
+export 'ui/pages/input_avatar_page.dart';
+export 'ui/pages/account_created_page.dart';
+export 'ui/pages/tab_find_pet.dart';

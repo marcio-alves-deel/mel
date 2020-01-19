@@ -93,22 +93,11 @@ class InputNamePage extends StatelessWidget {
   }
 
   Widget _title() {
-    return new RichText(
-      text: TextSpan(
-        text: 'Your',
-        style: GoogleFonts.quicksand(
-          color: Colors.black,
-          fontSize: 40,
-        ),
-        children: <TextSpan>[
-          TextSpan(
-            text: ' Name',
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.w900,
-            ),
-          ),
-        ],
+    return new Text(
+      'Your Name',
+      style: GoogleFonts.quicksand(
+        color: Colors.black,
+        fontSize: 40,
       ),
     );
   }

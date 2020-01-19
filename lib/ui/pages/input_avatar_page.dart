@@ -1,17 +1,20 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mel/ui/pages/input_avatar_page.dart';
+import 'package:mel/pages.dart';
 import 'package:mel/widgets.dart'
-    show Button, CutomBackButton, InputField, LocationInput;
+    show AvatarSelectWidget, Button, CutomBackButton;
 
-class LocationPage extends StatefulWidget {
+class AvatarPage extends StatefulWidget {
   @override
-  State createState() => new LocationPageState();
+  State createState() => new AvatarPageState();
 }
 
-class LocationPageState extends State<LocationPage> {
+class AvatarPageState extends State<AvatarPage> {
   final COLOR_THEME = Color(0xffE27BCE);
+  File _image;
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +39,13 @@ class LocationPageState extends State<LocationPage> {
                   width: double.infinity,
                   color: Colors.transparent,
                   child: Padding(
-                    padding: const EdgeInsets.all(30.0),
+                    padding: const EdgeInsets.only(
+                      left: 30.0,
+                      right: 30.0,
+                      bottom: 70.0,
+                    ),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         new Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -51,10 +58,14 @@ class LocationPageState extends State<LocationPage> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(
-                            bottom: bottom + 100,
+                            bottom: bottom,
                           ),
-                          child: _locationForm(),
+                          child: _avatarView(),
                         ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                        _details()
                       ],
                     ),
                   ),
@@ -69,7 +80,8 @@ class LocationPageState extends State<LocationPage> {
                 onPress: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => AvatarPage()),
+                    MaterialPageRoute(
+                        builder: (context) => AccountCreatedPage()),
                   );
                 },
               ),
@@ -96,7 +108,7 @@ class LocationPageState extends State<LocationPage> {
 
   Widget _title() {
     return new Text(
-      'Location',
+      'Avatar',
       style: GoogleFonts.quicksand(
         color: Colors.black,
         fontSize: 40,
@@ -108,7 +120,7 @@ class LocationPageState extends State<LocationPage> {
     return Container(
       width: 250,
       child: new Text(
-        'We will use your location to improve the filters displaying content based on distance from you',
+        'You can select a picture to represent you on the comunity',
         style: TextStyle(
           fontSize: 16,
         ),
@@ -116,10 +128,33 @@ class LocationPageState extends State<LocationPage> {
     );
   }
 
-  Widget _locationForm() {
+  Widget _avatarView() {
     return Column(
       children: <Widget>[
-        LocationInput(),
+        AvatarSelectWidget(image: _image),
+      ],
+    );
+  }
+
+  Widget _details() {
+    return Column(
+      children: <Widget>[
+        new Text(
+          'John Doe',
+          style: GoogleFonts.quicksand(
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+            fontSize: 22,
+          ),
+        ),
+        new Text(
+          'john.doe@example.com',
+          style: GoogleFonts.quicksand(
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
+          ),
+        ),
       ],
     );
   }

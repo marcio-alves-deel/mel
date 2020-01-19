@@ -3,5 +3,7 @@ cloud_firestore=/Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/cloud
 firebase_auth=/Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+5/
 firebase_core=/Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+9/
 flutter_keyboard_visibility=/Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/flutter_keyboard_visibility-0.7.0/
+flutter_plugin_android_lifecycle=/Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.4/
+image_picker=/Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.3+1/
 path_provider=/Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/path_provider-1.5.1/
 shared_preferences=/Users/marciomontenegro/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.4+9/
