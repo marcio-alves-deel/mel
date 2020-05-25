@@ -134,6 +134,7 @@ class UserRepositoryImpl implements UserRepository {
     try {
       final FirebaseUser firebaseUser = await firebaseAuth.currentUser();
       await firebaseUser.delete();
+      await remoteDataSource.deleteUser();
       await localDataSource.cleanUserData();
       return null;
     } on ServerException {
@@ -158,21 +159,23 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> update(
-      {String firstName,
-      String lastName,
-      String birthDate,
-      String avatar}) async {
+  Future<Either<Failure, UserEntity>> update({
+    String firstName,
+    String lastName,
+    String birthDate,
+    String avatar,
+  }) async {
     if (await networkInfo.isConnected == false) return Left(NetworkFailure());
     try {
       final FirebaseUser firebaseUser = await firebaseAuth.currentUser();
       final UserModel newUserData = UserModel(
-          uid: firebaseUser.uid,
-          email: firebaseUser.email,
-          firstName: firstName,
-          lastName: lastName,
-          birthDate: birthDate,
-          avatar: avatar);
+        uid: firebaseUser.uid,
+        email: firebaseUser.email,
+        firstName: firstName,
+        lastName: lastName,
+        avatar: avatar,
+        birthDate: birthDate,
+      );
       remoteDataSource.updateUserData(
           id: firebaseUser.email, user: newUserData);
       localDataSource.cacheUserData(user: newUserData);

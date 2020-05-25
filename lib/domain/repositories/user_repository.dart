@@ -16,8 +16,12 @@ abstract class UserRepository {
       String birthDate,
       String avatar});
 
-  Future<Either<Failure, UserEntity>> update(
-      {String firstName, String lastName, String birthDate, String avatar});
+  Future<Either<Failure, UserEntity>> update({
+    String firstName,
+    String lastName,
+    String birthDate,
+    String avatar,
+  });
 
   Future<Either<Failure, None>> resetPassword();
 

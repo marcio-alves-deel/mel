@@ -29,7 +29,7 @@ class HomeLayoutState extends State<HomeLayout> {
         child: new Stack(
           children: <Widget>[
             new SignInUpPageView(controller: _controller, pages: _pages),
-            _body(),
+            // _body(),
             Positioned(
               bottom: 40,
               left: 30,

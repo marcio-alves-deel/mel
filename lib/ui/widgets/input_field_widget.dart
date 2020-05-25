@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_conditional_rendering/conditional.dart'
-    show Conditional;
 
-Widget InputField(
+Widget inputField(
     {String labelText = '',
     Color color = Colors.black,
     bool obscureText = false,

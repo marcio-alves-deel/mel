@@ -106,7 +106,7 @@ void main() {
                   email: tEmail, password: tPassword))
               .thenAnswer((_) async => mockAuthResult);
           when(mockAuthResult.user).thenReturn(mockFirebaseUser);
-          when(mockRemoteDataSource.getUserData(id: any))
+          when(mockRemoteDataSource.getUserData(id: mockFirebaseUser.email))
               .thenAnswer((_) async => tUser);
           // act
           final result =
@@ -353,7 +353,7 @@ void main() {
                   email: tEmail, password: tPassword))
               .thenAnswer((_) async => mockAuthResult);
           when(mockAuthResult.user).thenReturn(mockFirebaseUser);
-          when(mockRemoteDataSource.getUserData(id: any))
+          when(mockRemoteDataSource.getUserData(id: mockFirebaseUser.email))
               .thenAnswer((_) async => tUser);
           // act
           final result = await repository.register(

@@ -33,7 +33,6 @@ class InputBirthdatePageState extends State<InputBirthdatePage> {
 
   final GlobalKey<DropdownInputState> _dayKey =
       new GlobalKey<DropdownInputState>();
-  final List<int> _days = List<int>.generate(10, (i) => i + 1);
 
   final GlobalKey<DropdownInputState> _yearKey =
       new GlobalKey<DropdownInputState>();
@@ -129,7 +128,6 @@ class InputBirthdatePageState extends State<InputBirthdatePage> {
         fontSize: 40,
       ),
     );
-    ;
   }
 
   Widget _subtitle() {
@@ -175,20 +173,6 @@ class InputBirthdatePageState extends State<InputBirthdatePage> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _note(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width - 60,
-      child: new Text(
-        'Note: Providing a real name will help other users to find and contact your.',
-        textAlign: TextAlign.left,
-        style: TextStyle(
-          fontSize: 14,
-          color: Colors.black45,
-        ),
       ),
     );
   }

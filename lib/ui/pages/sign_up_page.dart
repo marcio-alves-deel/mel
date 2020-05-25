@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mel/widgets.dart' show Button, InputField;
+import 'package:mel/widgets.dart' show inputField;
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -99,7 +99,7 @@ class SignUpPageState extends State<SignUpPage> {
   Widget _signUpForm() {
     return Column(
       children: <Widget>[
-        InputField(
+        inputField(
           labelText: 'Email',
           color: COLOR_THEME,
           hintText: 'enter a valid email',
@@ -108,7 +108,7 @@ class SignUpPageState extends State<SignUpPage> {
         SizedBox(
           height: 15,
         ),
-        InputField(
+        inputField(
           labelText: 'Password',
           color: COLOR_THEME,
           obscureText: true,
@@ -117,7 +117,7 @@ class SignUpPageState extends State<SignUpPage> {
         SizedBox(
           height: 15,
         ),
-        InputField(
+        inputField(
             labelText: 'Password confirmation',
             color: COLOR_THEME,
             obscureText: true,

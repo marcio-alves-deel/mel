@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mel/pages.dart' show InputBirthdatePage;
-import 'package:mel/widgets.dart' show Button, CutomBackButton, InputField;
+import 'package:mel/widgets.dart' show Button, CutomBackButton, inputField;
 
 class InputNamePage extends StatelessWidget {
   final COLOR_THEME = Color(0xffE27BCE);
@@ -118,14 +118,14 @@ class InputNamePage extends StatelessWidget {
     return Row(
       children: <Widget>[
         Expanded(
-          child: InputField(
+          child: inputField(
               labelText: 'first name', color: COLOR_THEME, autocorrect: true),
         ),
         SizedBox(
           width: 30,
         ),
         Expanded(
-          child: InputField(
+          child: inputField(
               labelText: 'last name', color: COLOR_THEME, autocorrect: true),
         ),
       ],

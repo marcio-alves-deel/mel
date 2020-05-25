@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mel/pages.dart' show InputNamePage;
-import 'package:mel/widgets.dart' show Button, CutomBackButton, InputField;
+import 'package:mel/widgets.dart' show Button;
 
 class StepPage extends StatelessWidget {
   final COLOR_THEME = Color(0xffE27BCE);

@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart' show ImagePicker, ImageSource;
 import 'package:line_icons/line_icons.dart';
-import 'package:mel/widgets.dart' show Button;
 
 class AvatarSelectWidget extends StatefulWidget {
   File image;

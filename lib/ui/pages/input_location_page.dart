@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mel/ui/pages/input_avatar_page.dart';
-import 'package:mel/widgets.dart'
-    show Button, CutomBackButton, InputField, LocationInput;
+import 'package:mel/widgets.dart' show Button, CutomBackButton, LocationInput;
 
 class LocationPage extends StatefulWidget {
   @override

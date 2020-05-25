@@ -1,6 +1,6 @@
 {
-    "userId": "1",
-    "email": "Emely.Connelly@example.com",
-    "firstName": "Carlotta",
-    "lastName": "Rau"
+  "uid": "1",
+  "email": "Emely.Connelly@example.com",
+  "firstName": "Carlotta",
+  "lastName": "Rau"
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mel/widgets.dart' show Button, InputField;
+import 'package:mel/widgets.dart' show inputField;
 
 class SignInPage extends StatefulWidget {
   @override
@@ -87,7 +87,7 @@ class SignInPageState extends State<SignInPage> {
   Widget _signInForm() {
     return Column(
       children: <Widget>[
-        InputField(
+        inputField(
             labelText: 'Email',
             color: COLOR_THEME,
             keyboardType: TextInputType.emailAddress,
@@ -95,7 +95,7 @@ class SignInPageState extends State<SignInPage> {
         SizedBox(
           height: 15,
         ),
-        InputField(
+        inputField(
           labelText: 'Password',
           color: COLOR_THEME,
           obscureText: true,

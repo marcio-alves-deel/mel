@@ -49,7 +49,7 @@ void main() {
     test('should return a JSON map from complete date', () async {
       final result = tUserModel.toJson();
       final expected = {
-        "userId": "1",
+        "uid": "1",
         "email": "Emely.Connelly@example.com",
         "firstName": "Carlotta",
         "lastName": "Rau",
@@ -64,7 +64,7 @@ void main() {
     test('should return a JSON map without birthDate or avatar', () async {
       final result = tUserModelIncomplete.toJson();
       final expected = {
-        "userId": "1",
+        "uid": "1",
         "email": "Emely.Connelly@example.com",
         "firstName": "Carlotta",
         "lastName": "Rau",
