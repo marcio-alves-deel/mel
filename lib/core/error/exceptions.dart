@@ -2,6 +2,8 @@ import 'package:flutter/services.dart';
 
 class ServerException implements Exception {}
 
+class NotRegisteredException implements Exception {}
+
 class NetworkException implements Exception {}
 
 class CacheException implements Exception {}

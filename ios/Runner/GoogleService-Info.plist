@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>456312559410-tikd9ccc1iu3li7lns1km7c2od39mr4d.apps.googleusercontent.com</string>
+	<string>815418771841-4h9v6uktflda7vnt00ednur38ksdfaqg.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.456312559410-tikd9ccc1iu3li7lns1km7c2od39mr4d</string>
+	<string>com.googleusercontent.apps.815418771841-4h9v6uktflda7vnt00ednur38ksdfaqg</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBPFuou04IBdswQHzkJY8JYM7twaH7pnG0</string>
+	<string>AIzaSyCSFsN-lbUxhh_rPyaS82A1pqSc9s61sX8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>456312559410</string>
+	<string>815418771841</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.mel</string>
+	<string>com.mriaco.mel</string>
 	<key>PROJECT_ID</key>
-	<string>mel-pet-117ca</string>
+	<string>fleet-cirrus-265003</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mel-pet-117ca.appspot.com</string>
+	<string>fleet-cirrus-265003.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:456312559410:ios:20b702dd15c0807722692b</string>
+	<string>1:815418771841:ios:94fe6d977a0fc245d88080</string>
 	<key>DATABASE_URL</key>
-	<string>https://mel-pet-117ca.firebaseio.com</string>
+	<string>https://fleet-cirrus-265003.firebaseio.com</string>
 </dict>
 </plist>

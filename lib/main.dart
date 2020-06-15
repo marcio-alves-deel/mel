@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mel/layouts.dart' show HomeLayout;
+import 'package:mel/bindings.dart';
+import 'package:mel/dependencies.dart' as dep;
+import 'package:mel/layouts.dart' show FeedTabLayout;
+import 'package:mel/ui.dart' show MessageScreen, SignInPage, SplashPage;
 
-import 'ui/routes.dart';
-
-void main() {
-  Routes.createRoutes();
-
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dep.init();
   runApp(MyApp());
 }
 
@@ -18,16 +20,32 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Mel',
       theme: ThemeData(
-        textTheme: GoogleFonts.quicksandTextTheme(
+        textTheme: GoogleFonts.lindenHillTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
-      home: HomeLayout(),
-      onGenerateRoute: Routes.sailor.generator(),
-      navigatorKey: Routes.sailor.navigatorKey,
+      initialRoute: '/',
+      namedRoutes: {
+        '/': GetRoute(
+          page: SplashPage(),
+          binding: SplashBinding(),
+        ),
+        '/sign_in': GetRoute(
+          page: SignInPage(),
+          binding: SignInBinding(),
+        ),
+        '/home': GetRoute(
+          page: FeedTabLayout(),
+          binding: HomeBinding(),
+        ),
+        '/chat': GetRoute(
+          page: MessageScreen(),
+          binding: ChatBinding(),
+        ),
+      },
     );
   }
 }

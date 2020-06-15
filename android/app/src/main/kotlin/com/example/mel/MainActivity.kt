@@ -1,4 +1,4 @@
-package com.example.mel
+package com.mriaco.mel
 
 import android.os.Bundle
 

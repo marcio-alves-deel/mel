@@ -1,2 +1,1 @@
-export 'ui/layouts/home_layout.dart';
-export 'ui/layouts/feed_tab_layout.dart';
+export 'layouts/feed_tab_layout.dart';

@@ -1,6 +1,9 @@
-import 'package:dartz/dartz.dart' show Either, Left, Right, None;
+import 'package:dartz/dartz.dart' show Either, Left, None, Right;
 import 'package:firebase_auth/firebase_auth.dart'
-    show FirebaseAuth, FirebaseUser, AuthResult;
+    show AuthResult, FacebookAuthProvider, FirebaseAuth, FirebaseUser;
+import 'package:flutter_facebook_login/flutter_facebook_login.dart'
+    show FacebookLogin, FacebookLoginStatus;
+import 'package:google_sign_in/google_sign_in.dart' show GoogleSignIn;
 import 'package:mel/core.dart'
     show
         AuthenticationException,
@@ -8,6 +11,7 @@ import 'package:mel/core.dart'
         AuthorizationFailure,
         CacheException,
         CacheFailure,
+        CanceledOperation,
         Failure,
         NetworkException,
         NetworkFailure,
@@ -16,10 +20,12 @@ import 'package:mel/core.dart'
         ServerFailure;
 import 'package:mel/datasources.dart'
     show UserLocalDataSource, UserRemoteDataSource;
-import 'package:mel/entities.dart' show UserEntity;
-import 'package:mel/models.dart' show UserModel;
+import 'package:mel/entities.dart' show User;
+import 'package:mel/models.dart';
 import 'package:mel/repositories.dart' show UserRepository;
 import 'package:meta/meta.dart' show required;
+import 'package:http/http.dart' as http;
+import 'dart:convert' as JSON;
 
 class UserRepositoryImpl implements UserRepository {
   final NetworkInfo networkInfo;
@@ -27,27 +33,94 @@ class UserRepositoryImpl implements UserRepository {
   final UserLocalDataSource localDataSource;
   final FirebaseAuth firebaseAuth;
 
-  UserRepositoryImpl(
-      {@required this.remoteDataSource,
-      @required this.localDataSource,
-      @required this.networkInfo,
-      @required this.firebaseAuth})
-      : assert(remoteDataSource != null),
+  UserRepositoryImpl({
+    @required this.remoteDataSource,
+    @required this.localDataSource,
+    @required this.networkInfo,
+    @required this.firebaseAuth,
+  })  : assert(remoteDataSource != null),
         assert(localDataSource != null),
         assert(networkInfo != null),
         assert(firebaseAuth != null);
 
   @override
-  Future<Either<Failure, UserEntity>> authenticate(
-      {@required String email, @required String password}) async {
+  Future<Either<Failure, User>> authenticateFacebook([
+    FacebookLogin authInstance,
+    FacebookAuthProvider authProvider,
+  ]) async {
+    if (!await networkInfo.isConnected) return Left(NetworkFailure());
+
+    FacebookResponseModel facebookResponse;
+    UserModel user;
+
+    try {
+      final signInResult = await authInstance.logIn([
+        'email',
+        "public_profile",
+      ]);
+
+      switch (signInResult.status) {
+        case FacebookLoginStatus.loggedIn:
+          final token = signInResult.accessToken.token;
+          final graphResponse = await http.get(
+              'https://graph.facebook.com/v2.12/me?fields=first_name,last_name,picture,email,address,birthday,gender&access_token=$token');
+          facebookResponse = FacebookResponseModel.fromJson(
+              JSON.jsonDecode(graphResponse.body));
+
+          final bool hasData =
+              await remoteDataSource.hasData(facebookResponse.email);
+
+          if (!hasData) {
+            final UserModel newUser = new UserModel(
+              email: facebookResponse.email,
+              firstName: facebookResponse.firstName,
+              lastName: facebookResponse.lastName,
+              birthday: facebookResponse.birthday,
+              picture: facebookResponse.picture,
+            );
+            user = await remoteDataSource.createUser(newUser);
+            firebaseAuth.createUserWithEmailAndPassword(
+                email: user.email, password: null);
+          } else {
+            user = await remoteDataSource.getUserData(facebookResponse.email);
+          }
+
+          await firebaseAuth.signInWithCredential(
+            FacebookAuthProvider.getCredential(
+              accessToken: signInResult.accessToken.token,
+            ),
+          );
+
+          await localDataSource.cacheUserData(user);
+          return Right(user);
+        case FacebookLoginStatus.cancelledByUser:
+          return Left(CanceledOperation());
+        case FacebookLoginStatus.error:
+          return Left(AuthorizationFailure());
+      }
+    } on ServerException {
+      return Left(ServerFailure());
+    } on AuthenticationException {
+      return Left(AuthenticationFailure());
+    } on NetworkException {
+      return Left(NetworkFailure());
+    } on CacheException {
+      return Left(CacheFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, User>> authenticateGoogle([
+    GoogleSignIn authInstance,
+  ]) async {
     if (!await networkInfo.isConnected) return Left(NetworkFailure());
     try {
-      final AuthResult authResult = await firebaseAuth
-          .signInWithEmailAndPassword(email: email, password: password);
+      AuthResult authResult;
+
       if (authResult == null) return Left(AuthorizationFailure());
       final user = authResult.user;
-      final result = await remoteDataSource.getUserData(id: user.email);
-      await localDataSource.cacheUserData(user: result);
+      final result = await remoteDataSource.getUserData(user.email);
+      await localDataSource.cacheUserData(result);
       return Right(result);
     } on ServerException {
       return Left(ServerFailure());
@@ -61,15 +134,14 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> current() async {
+  Future<Either<Failure, User>> current() async {
     try {
       final FirebaseUser firebaseUser = await firebaseAuth.currentUser();
       if (firebaseUser == null) return Left(AuthorizationFailure());
 
       if (await networkInfo.isConnected) {
-        final result =
-            await remoteDataSource.getUserData(id: firebaseUser.email);
-        localDataSource.cacheUserData(user: result);
+        final result = await remoteDataSource.getUserData(firebaseUser.email);
+        localDataSource.cacheUserData(result);
         return Right(result);
       } else {
         final result = await localDataSource.getLastUserData();
@@ -96,39 +168,6 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> register(
-      {@required String email,
-      @required String password,
-      @required String firstName,
-      @required String lastName,
-      String birthDate,
-      String avatar}) async {
-    if (await networkInfo.isConnected == false) return Left(NetworkFailure());
-    try {
-      AuthResult authResult = await firebaseAuth.createUserWithEmailAndPassword(
-          email: email, password: password);
-      FirebaseUser firebaseUser = authResult.user;
-      final user = new UserModel(
-          uid: firebaseUser.uid,
-          email: email,
-          firstName: firstName,
-          lastName: lastName,
-          birthDate: birthDate,
-          avatar: avatar);
-      await remoteDataSource.createUser(user: user);
-      await localDataSource.cacheUserData(user: user);
-      await firebaseAuth.signInWithEmailAndPassword(
-          email: email, password: password);
-      final result = await remoteDataSource.getUserData(id: user.email);
-      return Right(result);
-    } on ServerException {
-      return Left(ServerFailure());
-    } on CacheException {
-      return Left(CacheFailure());
-    }
-  }
-
-  @override
   Future<Either<Failure, None>> delete() async {
     if (await networkInfo.isConnected == false) return Left(NetworkFailure());
     try {
@@ -150,35 +189,6 @@ class UserRepositoryImpl implements UserRepository {
     try {
       final FirebaseUser firebaseUser = await firebaseAuth.currentUser();
       firebaseAuth.sendPasswordResetEmail(email: firebaseUser.email);
-      return null;
-    } on ServerException {
-      return Left(ServerFailure());
-    } on CacheException {
-      return Left(CacheFailure());
-    }
-  }
-
-  @override
-  Future<Either<Failure, UserEntity>> update({
-    String firstName,
-    String lastName,
-    String birthDate,
-    String avatar,
-  }) async {
-    if (await networkInfo.isConnected == false) return Left(NetworkFailure());
-    try {
-      final FirebaseUser firebaseUser = await firebaseAuth.currentUser();
-      final UserModel newUserData = UserModel(
-        uid: firebaseUser.uid,
-        email: firebaseUser.email,
-        firstName: firstName,
-        lastName: lastName,
-        avatar: avatar,
-        birthDate: birthDate,
-      );
-      remoteDataSource.updateUserData(
-          id: firebaseUser.email, user: newUserData);
-      localDataSource.cacheUserData(user: newUserData);
       return null;
     } on ServerException {
       return Left(ServerFailure());

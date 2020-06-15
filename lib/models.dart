@@ -1,6 +1,4 @@
-export 'data/models/comment_model.dart';
 export 'data/models/location_model.dart';
-export 'data/models/pet_model.dart';
-export 'data/models/photo_model.dart';
-export 'data/models/post_model.dart';
+export 'data/models/picture_model.dart';
+export 'data/models/facebook_response_model.dart';
 export 'data/models/user_model.dart';

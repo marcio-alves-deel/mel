@@ -1,24 +1,22 @@
 import 'package:equatable/equatable.dart' show Equatable;
+import 'package:mel/models.dart' show PictureModel;
 import 'package:meta/meta.dart' show required;
 
-class UserEntity extends Equatable {
-  final String uid;
+class User extends Equatable {
   final String email;
   final String firstName;
   final String lastName;
-  final String birthDate;
-  final String avatar;
+  final String birthday;
+  final PictureModel picture;
 
-  UserEntity({
-    @required this.uid,
+  User({
     @required this.email,
     @required this.firstName,
     @required this.lastName,
-    this.birthDate,
-    this.avatar,
+    this.picture,
+    this.birthday,
   });
 
   @override
-  List<Object> get props =>
-      [uid, email, firstName, lastName, birthDate, avatar];
+  List<Object> get props => [email, firstName, lastName, birthday, picture];
 }

@@ -1,27 +1,19 @@
 import 'package:dartz/dartz.dart' show Either, None;
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mel/core.dart' show Failure;
-import 'package:mel/entities.dart' show UserEntity;
+import 'package:mel/entities.dart' show User;
 
 abstract class UserRepository {
-  Future<Either<Failure, UserEntity>> authenticate(
-      {String email, String password});
+  Future<Either<Failure, User>> authenticateFacebook([
+    FacebookLogin authInstance,
+  ]);
 
-  Future<Either<Failure, UserEntity>> current();
+  Future<Either<Failure, User>> authenticateGoogle([
+    GoogleSignIn authInstance,
+  ]);
 
-  Future<Either<Failure, UserEntity>> register(
-      {String email,
-      String password,
-      String firstName,
-      String lastName,
-      String birthDate,
-      String avatar});
-
-  Future<Either<Failure, UserEntity>> update({
-    String firstName,
-    String lastName,
-    String birthDate,
-    String avatar,
-  });
+  Future<Either<Failure, User>> current();
 
   Future<Either<Failure, None>> resetPassword();
 
