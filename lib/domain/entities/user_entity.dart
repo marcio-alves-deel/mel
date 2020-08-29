@@ -1,15 +1,15 @@
 import 'package:equatable/equatable.dart' show Equatable;
-import 'package:mel/models.dart' show PictureModel;
+import 'package:mel/data.dart' show Picture;
 import 'package:meta/meta.dart' show required;
 
-class User extends Equatable {
+class UserEntity extends Equatable {
   final String email;
   final String firstName;
   final String lastName;
   final String birthday;
-  final PictureModel picture;
+  final Picture picture;
 
-  User({
+  UserEntity({
     @required this.email,
     @required this.firstName,
     @required this.lastName,

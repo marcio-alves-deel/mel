@@ -6,22 +6,19 @@ part of 'facebook_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FacebookResponseModel _$FacebookResponseModelFromJson(
-    Map<String, dynamic> json) {
-  return FacebookResponseModel(
+FacebookResponse _$FacebookResponseModelFromJson(Map<String, dynamic> json) {
+  return FacebookResponse(
     email: json['email'] as String,
     firstName: json['first_name'] as String,
     lastName: json['last_name'] as String,
     birthday: json['birthday'],
     picture: json['picture']['data'] == null
         ? null
-        : PictureModel.fromJson(
-            json['picture']['data'] as Map<String, dynamic>),
+        : Picture.fromJson(json['picture']['data'] as Map<String, dynamic>),
   );
 }
 
-Map<String, dynamic> _$FacebookResponseModelToJson(
-        FacebookResponseModel instance) =>
+Map<String, dynamic> _$FacebookResponseModelToJson(FacebookResponse instance) =>
     <String, dynamic>{
       'email': instance.email,
       'first_name': instance.firstName,

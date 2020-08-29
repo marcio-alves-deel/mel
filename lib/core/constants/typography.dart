@@ -10,7 +10,7 @@ var tTitle = ([double fontSize]) => TextStyle(
 var tSubTitle = ([double fontSize]) => TextStyle(
       fontSize: fontSize ?? 16.0,
       fontWeight: FontWeight.w200,
-      color: cBlack,
+      color: cWhite,
     );
 
 var tThinWhite = ([double fontSize]) => TextStyle(
@@ -20,11 +20,11 @@ var tThinWhite = ([double fontSize]) => TextStyle(
     );
 
 var tWelcome = ([double fontSize]) => TextStyle(
-      color: Colors.black,
+      color: cWhite,
       fontSize: fontSize ?? 40,
     );
 
 var tWelcomeSub = ([double fontSize]) => TextStyle(
-      color: Colors.black.withAlpha(400),
+      color: cWhite,
       fontSize: fontSize ?? 16,
     );

@@ -6,8 +6,8 @@ part of 'picture_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PictureModel _$PictureModelFromJson(Map<String, dynamic> json) {
-  return PictureModel(
+Picture _$PictureModelFromJson(Map<String, dynamic> json) {
+  return Picture(
     height: json['height'],
     width: json['width'],
     isSilhouette: json['is_silhouette'],
@@ -15,7 +15,7 @@ PictureModel _$PictureModelFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$PictureModelToJson(PictureModel instance) =>
+Map<String, dynamic> _$PictureModelToJson(Picture instance) =>
     <String, dynamic>{
       'height': instance.height,
       'width': instance.width,

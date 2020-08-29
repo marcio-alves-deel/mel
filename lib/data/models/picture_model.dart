@@ -1,11 +1,11 @@
-import 'package:mel/entities.dart' show PictureEntity;
 import 'package:json_annotation/json_annotation.dart' show JsonSerializable;
+import 'package:mel/domain.dart' show PictureEntity;
 
 part 'picture_model.g.dart';
 
 @JsonSerializable()
-class PictureModel extends PictureEntity {
-  PictureModel({
+class Picture extends PictureEntity {
+  Picture({
     height,
     width,
     isSilhouette,
@@ -17,7 +17,7 @@ class PictureModel extends PictureEntity {
           url: url,
         );
 
-  factory PictureModel.fromJson(Map<String, dynamic> json) =>
+  factory Picture.fromJson(Map<String, dynamic> json) =>
       _$PictureModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$PictureModelToJson(this);

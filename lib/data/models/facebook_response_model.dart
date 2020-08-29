@@ -1,16 +1,17 @@
 import 'package:json_annotation/json_annotation.dart' show JsonSerializable;
-import 'package:mel/entities.dart';
-import 'package:mel/models.dart';
+import 'package:mel/data.dart' show Picture;
+import 'package:mel/domain.dart' show FacebookResponseEntity;
+
 part 'facebook_response_model.g.dart';
 
 @JsonSerializable()
-class FacebookResponseModel extends FacebookResponseEntity {
-  FacebookResponseModel({
+class FacebookResponse extends FacebookResponseEntity {
+  FacebookResponse({
     String email,
     String firstName,
     String lastName,
     String birthday,
-    PictureModel picture,
+    Picture picture,
   }) : super(
           email: email,
           firstName: firstName,
@@ -19,7 +20,7 @@ class FacebookResponseModel extends FacebookResponseEntity {
           picture: picture,
         );
 
-  factory FacebookResponseModel.fromJson(Map<String, dynamic> json) =>
+  factory FacebookResponse.fromJson(Map<String, dynamic> json) =>
       _$FacebookResponseModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$FacebookResponseModelToJson(this);

@@ -1,12 +1,13 @@
-import 'package:mel/entities.dart' show User;
-import 'package:mel/models.dart';
 import 'package:meta/meta.dart' show required;
 import 'package:json_annotation/json_annotation.dart' show JsonSerializable;
+import 'package:mel/domain.dart' show UserEntity;
+import 'package:mel/data.dart' show Picture;
+
 part 'user_model.g.dart';
 
 @JsonSerializable()
-class UserModel extends User {
-  UserModel({
+class User extends UserEntity {
+  User({
     @required email,
     @required firstName,
     @required lastName,
@@ -20,8 +21,9 @@ class UserModel extends User {
           picture: picture,
         );
 
-  factory UserModel.fromJson(Map<String, dynamic> json) =>
-      _$UserModelFromJson(json);
+  get userName => '$firstName $lastName';
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserModelToJson(this);
 }
